@@ -1,9 +1,8 @@
-// import ToDoApp from "./ToDoApp";
 import { useState } from "react";
 import AddIcon from "./assets/add-icon.svg";
-import DeleteIcon from "./assets/delete-icon.svg";
 import DeleteAllIcon from "./assets/delete-all-icon.svg";
 import Button from "./components/Button";
+import List from "./components/List";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -38,7 +37,7 @@ function App() {
       <p className="text-7xl text-center p-15 uppercase font-medium">
         To Do List
       </p>
-      <div className="flex relative group justify-center gap-5">
+      <div className="flex relative group flex-wrap justify-center gap-5">
         <input
           className="bg-orange-50 border border-orange-200 rounded-xl text-black p-3 text-xl h-21 focus:outline-none focus:right-2 focus:ring-orange-300 hover:scale-105 transition-transform"
           type="text"
@@ -67,25 +66,7 @@ function App() {
           There is no tasks yet
         </p>
       ) : (
-        <ul className="mt-10 ml-15 flex flex-row flex-wrap gap-5">
-          {tasks.map((task, index) => (
-            <div className="bg-orange-100 rounded-xl w-auto text-orange-900">
-              <li
-                key={index}
-                className="text-2xl uppercase p-5 text-neutral-700 font-bold  "
-              >
-                {index + 1}. {task}
-              </li>
-              <Button
-                icon={DeleteIcon}
-                alt="delete"
-                tooltip="Delete task"
-                onClick={() => deleteTask(index)}
-                className="flex justify-center w-full pb-5"
-              />
-            </div>
-          ))}
-        </ul>
+        <List tasks={tasks} deleteTask={(index) => deleteTask(index)} />
       )}
     </div>
   );
