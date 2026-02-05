@@ -2,6 +2,7 @@ function Button({
   icon,
   alt,
   onClick,
+  text,
   tooltip,
   tooltipPosition = "top",
   className = "",
@@ -19,8 +20,10 @@ function Button({
 
   return (
     <button
+      aria-label={alt}
       onClick={onClick}
-      className={`relative group cursor-pointer ${className} hover:scale-110 transition-all `}
+      className={`relative group cursor-pointer flex items-center justify-center w-auto h-16 
+        rounded-lg transition md:hover:scale-110 active:scale-90 ${className} hover:scale-110 transition-all `}
     >
       {tooltip && (
         <div
@@ -34,6 +37,19 @@ function Button({
             z-10
           `}
         >
+          {/* <div
+          className={`
+      absolute ${positions[tooltipPosition]}
+      whitespace-nowrap
+      rounded bg-neutral-900 px-2 py-1 text-xs text-white
+      opacity-0
+      md:group-hover:opacity-100
+      transition-opacity duration-200
+      pointer-events-none
+      z-10
+      hidden md:block
+    `}
+        > */}
           {tooltip}
           <div
             className={`
@@ -44,7 +60,14 @@ function Button({
         </div>
       )}
 
-      <img src={icon} alt={alt} />
+      <img
+        src={icon}
+        alt={alt}
+        className="w-40 h-40 
+        md:w-auto md:h-16 
+        cursor-pointer"
+      />
+      <p className="md:block sm:block p-2">{text}</p>
     </button>
   );
 }
