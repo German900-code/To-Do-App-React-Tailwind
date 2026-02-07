@@ -62,7 +62,7 @@
 
 // export default List;
 
-import DeleteIcon from "../assets/delete-icon.svg";
+import DeleteIcon from "../assets/icons/delete-icon.svg";
 import Button from "./Button";
 
 function List({ tasks, deleteTask, setTasks }) {
@@ -99,6 +99,13 @@ function List({ tasks, deleteTask, setTasks }) {
               `}
             >
               {index + 1}. {task.text}
+              <span
+                className={`
+                  absolute left-0 top-1/2 h-[2px] bg-neutral-400
+                  transition-all duration-1000
+                   ${task.isChecked ? "w-auto" : "w-0"}
+                `}
+              />
             </span>
 
             <input
@@ -109,12 +116,14 @@ function List({ tasks, deleteTask, setTasks }) {
             />
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center">
             <Button
               icon={DeleteIcon}
               alt="delete"
               tooltip="Delete task"
               onClick={() => deleteTask(task.id)}
+              // className="m-auto"
+              className=""
             />
           </div>
         </li>

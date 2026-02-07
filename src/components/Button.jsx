@@ -22,8 +22,11 @@ function Button({
     <button
       aria-label={alt}
       onClick={onClick}
-      className={`relative group cursor-pointer flex items-center justify-center w-auto h-16 
-        rounded-lg transition md:hover:scale-110 active:scale-90 ${className} hover:scale-110 transition-all `}
+      className={`relative group cursor-pointer flex items-center justify-center w-16 h-16 md:h-8
+        rounded-lg
+        transition md:hover:scale-110 active:scale-90 
+        ${className} 
+        hover:scale-110 transition-all `}
     >
       {tooltip && (
         <div
@@ -64,10 +67,10 @@ function Button({
         src={icon}
         alt={alt}
         className="w-40 h-40 
-        md:w-auto md:h-16 
+        md:w-8 md:h-8 
         cursor-pointer"
       />
-      <p className="md:block sm:block p-2">{text}</p>
+      <p className="md:block sm:block">{text}</p>
     </button>
   );
 }
