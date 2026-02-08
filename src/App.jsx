@@ -81,21 +81,21 @@ function App() {
   return (
     <div>
       {/* <p className="text-7xl text-center p-15 uppercase font-medium"> */}
-      <p className="text-6xl md:text-5xl text-center py-8 uppercase font-medium m-5">
+      <p className="text-5xl md:text-6xl lg:text-7xl text-center py-10 uppercase font-medium m-5">
         To Do List
       </p>
       {/* <div className="flex relative group flex-wrap justify-center gap-5 "> */}
-      <div className="h-18 flex flex-col sm:flex-row relative group justify-center gap-2 sm:gap-5 sm:justify-center">
+      <div className="h-18 w-full flex flex-col justify-center  sm:flex-row relative group gap-3 mb-5 sm:gap-5 sm:justify-center md:justify-center lg:justify-center">
         <input
           // className="bg-orange-50 border border-orange-200 rounded-xl text-black p-3 text-xl h-21 focus:outline-none focus:right-2 focus:ring-orange-300 hover:scale-105 transition-transform"
-          className="w-full md:w-2 sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition mr-3"
+          className="w-full mb-2 mt-5 md:w-2 sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition mr-3"
           type="text"
           placeholder="Enter a task"
           value={newTask}
           onChange={handleInputChange}
           onKeyDown={onKeyDownEnter}
         />
-        <div className="flex flex-row items-center gap-12 sm:justify-center sm:items-center sm:m-5">
+        <div className="flex flex-row items-center justify-center mb-5 gap-12 sm:justify-center sm:items-center sm:m-5">
           <Button
             icon={AddIcon}
             alt="add"

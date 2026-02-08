@@ -6,7 +6,7 @@ function Filter({ filter, setFilter, tasks }) {
   ];
 
   return (
-    <div className="flex gap-3 justify-center mt-6">
+    <div className="flex gap-3 justify-center mt-14">
       {buttons.map((btn) => (
         <button
           disabled={tasks.length === 0}
