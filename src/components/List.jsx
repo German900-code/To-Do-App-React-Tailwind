@@ -81,8 +81,8 @@ function List({ tasks, deleteTask, setTasks }) {
           key={task.id}
           className="
             bg-orange-100 rounded-xl
-            p-5
-            flex flex-col gap-4
+            p-7
+            flex flex-col gap-7
           "
         >
           <div className="flex items-center justify-between gap-3">

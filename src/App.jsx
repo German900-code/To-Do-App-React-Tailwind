@@ -69,32 +69,55 @@ function App() {
     // setTasks(filteredTasks);
   });
 
+  const clearAllTasks = () => {
+    const isConfirmed = window.confirm(
+      "Do you really want to clear all tasks?",
+    );
+    if (isConfirmed) {
+      setTasks([]);
+    }
+  };
+
   return (
     <div>
       {/* <p className="text-7xl text-center p-15 uppercase font-medium"> */}
-      <p className="text-3xl sm:text-4xl md:text-6xl text-center py-8 uppercase font-medium m-5">
+      <p className="text-6xl md:text-5xl text-center py-8 uppercase font-medium m-5">
         To Do List
       </p>
       {/* <div className="flex relative group flex-wrap justify-center gap-5 "> */}
-      <div className="flex flex-col sm:flex-row relative group justify-center gap-3 sm:gap-5">
+      <div className="h-18 flex flex-col sm:flex-row relative group justify-center gap-2 sm:gap-5 sm:justify-center">
         <input
           // className="bg-orange-50 border border-orange-200 rounded-xl text-black p-3 text-xl h-21 focus:outline-none focus:right-2 focus:ring-orange-300 hover:scale-105 transition-transform"
-          className="w-full sm:w-auto sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
+          className="w-full md:w-2 sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition mr-3"
           type="text"
           placeholder="Enter a task"
           value={newTask}
           onChange={handleInputChange}
           onKeyDown={onKeyDownEnter}
         />
-        <Button
-          icon={AddIcon}
-          alt="add"
-          text="Add task"
-          tooltip="Add task"
-          tooltipPosition="top"
-          onClick={addTask}
-          className="gap-3"
-        />
+        <div className="flex flex-row items-center gap-12 sm:justify-center sm:items-center sm:m-5">
+          <Button
+            icon={AddIcon}
+            alt="add"
+            text="Add task"
+            tooltip="Add task"
+            tooltipPosition="top"
+            onClick={addTask}
+            tasks={tasks}
+            className="gap-3"
+          />
+          <Button
+            icon={DeleteAllIcon}
+            alt="clear"
+            text="Clear all"
+            tooltip={tasks.length === 0 ? "" : "Clear all tasks"}
+            tooltipPosition="top"
+            onClick={clearAllTasks}
+            tasks={tasks}
+            disabled={tasks.length === 0}
+            className={`gap-3 ${tasks.length === 0 ? "opacity-50 cursor-not-allowed" : ""} `}
+          />
+        </div>
         {/* <button
           className={`relative group cursor-pointer flex items-center justify-center w-auto h-16 
         rounded-lg 
@@ -122,17 +145,8 @@ function App() {
           tooltipPosition="top"
           onClick={filteredTasks}
         /> */}
-        <Button
-          icon={DeleteAllIcon}
-          alt="clear"
-          text="Clear all tasks"
-          tooltip="Clear all tasks"
-          tooltipPosition="top"
-          onClick={() => setTasks([])}
-          className="gap-3"
-        />
       </div>
-      <Filter filter={filter} setFilter={setFilter} />
+      <Filter filter={filter} setFilter={setFilter} tasks={tasks} />
       {tasks.length == 0 ? (
         // <p className="text-black text-center mt-20 text-3xl italic">
         <p

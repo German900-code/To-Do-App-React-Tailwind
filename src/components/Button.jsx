@@ -4,6 +4,7 @@ function Button({
   onClick,
   text,
   tooltip,
+  disabled,
   tooltipPosition = "top",
   className = "",
 }) {
@@ -26,7 +27,7 @@ function Button({
         rounded-lg
         transition md:hover:scale-110 active:scale-90 
         ${className} 
-        hover:scale-110 transition-all `}
+        hover:scale-110 transition-all`}
     >
       {tooltip && (
         <div
@@ -66,8 +67,8 @@ function Button({
       <img
         src={icon}
         alt={alt}
-        className="w-40 h-40 
-        md:w-8 md:h-8 
+        className="w-auto h-auto 
+        md:w-16 md:h-16 
         cursor-pointer"
       />
       <p className="md:block sm:block">{text}</p>

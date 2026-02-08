@@ -3,3 +3,8 @@
 body {
   background-color: #e3c13b;
 }
+
+body::selection {
+  background-color: black;
+  color: white;
+}
