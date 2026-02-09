@@ -27,7 +27,10 @@ function Button({
         rounded-lg
         transition md:hover:scale-110 active:scale-90 
         ${className} 
-        hover:scale-110 transition-all`}
+        hover:scale-110 transition-all
+        duration-150
+        active:scale-95
+        hover:opacity-90`}
     >
       {tooltip && (
         <div

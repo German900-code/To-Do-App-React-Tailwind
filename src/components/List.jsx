@@ -82,8 +82,8 @@ function List({ tasks, deleteTask, setTasks }) {
           className="
             bg-orange-100 rounded-xl
             p-7
-            flex flex-col gap-7
-          "
+            flex flex-col gap-7 duration-200
+          transition-all opacity-100 md:hover:scale-110 lg:hover:scale-110"
         >
           <div className="flex items-center justify-between gap-3">
             <span

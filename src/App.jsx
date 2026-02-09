@@ -88,7 +88,7 @@ function App() {
       <div className="h-18 w-full flex flex-col justify-center  sm:flex-row relative group gap-3 mb-5 sm:gap-5 sm:justify-center md:justify-center lg:justify-center">
         <input
           // className="bg-orange-50 border border-orange-200 rounded-xl text-black p-3 text-xl h-21 focus:outline-none focus:right-2 focus:ring-orange-300 hover:scale-105 transition-transform"
-          className="w-full md:w-2 sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition mr-3"
+          className="w-full md:w-2 sm:min-w-[280px] bg-orange-50 border border-orange-200 rounded-xl text-orange-700  px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition mr-3 md:hover:scale-105 lg:hover:scale-105"
           type="text"
           placeholder="Enter a task"
           value={newTask}
