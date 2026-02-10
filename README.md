@@ -1,16 +1,95 @@
-# React + Vite
+# To Do App (React + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Screenshots
 
-Currently, two official plugins are available:
+![App Preview Desktop](./screenshots/desktop-preview.png)
+![App Preview Mobile](./screenshots/mobile-preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple and responsive To Do application built with **React** and **Tailwind CSS**.
 
-## React Compiler
+**Live demo:** https://german900-code.github.io/To-Do-App-React-Tailwind/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ➕ Add new tasks
+
+- ✅ Mark tasks as completed
+
+- 🗑 Delete single task
+
+- 🧹 Clear all tasks with confirmation
+
+- 🔍 Filter tasks (All / Active / Completed)
+
+- 💾 Save tasks and filter state to `localStorage`
+
+- 📱 Fully responsive (mobile, tablet, desktop)
+
+- 🎬 Smooth animations for adding/removing tasks
+
+---
+
+- **React** (hooks)
+- **Tailwind CSS**
+- **JavaScript (ES6+)**
+- **GitHub Pages** (deployment, code review)
+- **Vite**
+
+---
+
+## 📂 Project Structure
+
+src/
+├── components/
+│ ├── Button.jsx
+│ ├── List.jsx
+│ └── Filter.jsx
+├── assets/
+│ └── icons/...
+├── App.jsx
+└── main.jsx
+
+---
+
+## ⚙️ How it works
+
+- Tasks are stored as objects with `id`, `text` and `isChecked`
+- Application state is managed with React `useState`
+- Data is persisted using `localStorage`
+- Filtering is done dynamically based on task status
+- UI is styled using utility classes from Tailwind CSS
+
+---
+
+## 📦 Installation & Run locally
+
+```bash
+git clone https://github.com/german900-code/To-Do-App-React-Tailwind.git
+cd To-Do-App-React-Tailwind
+npm install
+npm run dev
+```
+
+**🌍 Deployment**
+
+The project is deployed using GitHub Pages via the gh-pages branch.
+
+**👤 Author**
+
+German Voloshyn
+Junior Frontend Developer
+GitHub: https://github.com/german900-code
+
+**📌 Notes**
+
+This project was created for learning purposes to practice:
+
+React component architecture
+
+State management
+
+Responsive layout
+
+Working with Git and GitHub
