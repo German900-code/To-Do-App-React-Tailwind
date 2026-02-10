@@ -1,67 +1,3 @@
-// import DeleteIcon from "../assets/delete-icon.svg";
-// import Button from "./Button";
-
-// function List({ tasks, deleteTask, setTasks }) {
-//   function handleCheckboxInput(event) {
-//     setIsChecked(event.target.checked);
-//   }
-
-//   function toggleTask(id) {
-//     setTasks((prev) =>
-//       prev.map((task) =>
-//         task.id === id ? { ...task, isChecked: !task.isChecked } : task,
-//       ),
-//     );
-//   }
-
-//   return (
-//     <ul className="mt-15 m-15 flex flex-row flex-wrap gap-5 sm:justify-center">
-//       {tasks.map((task, id) => (
-//         <div className="bg-orange-100 rounded-xl w-auto text-orange-900 flex flex-col">
-//           <li
-//             key={task.id}
-//             className={`text-2xl uppercase p-5 cursor-pointer transition-all duration-400 text-neutral-700 font-bold ${task.isChecked ? "line-through text-gray-200" : "text-black"}`}
-//             value={isChecked}
-//             onChange={handleCheckboxInput}
-//           >
-//             {index + 1}.
-//             <span
-//               onClick={() => toggleTask(task.id)}
-//               className="cursor-pointer"
-//             >
-//               {task.text}
-//             </span>
-//             <input
-//               type="checkbox"
-//               className="cursor-pointer bg-none w-8 h-8 text-black"
-//               value={isChecked}
-//               onChange={handleCheckboxInput}
-//             />
-//           </li>
-//           <div className="flex flex-row items-center justify-center gap-7">
-//             <Button
-//               icon={DeleteIcon}
-//               alt="delete"
-//               tooltip="Delete task"
-//               onClick={() => deleteTask(index)}
-//               className="flex justify-center w-auto pb-5"
-//             />
-//             {/* <input
-//               type="checkbox"
-//               className="cursor-pointer bg-none w-8 h-8 text-black"
-//               value={isChecked}
-//               onChange={handleCheckboxInput}
-//             /> */}
-//             {/* <span>Done</span> */}
-//           </div>
-//         </div>
-//       ))}
-//     </ul>
-//   );
-// }
-
-// export default List;
-
 import DeleteIcon from "../assets/icons/delete-icon.svg";
 import Button from "./Button";
 
@@ -122,7 +58,6 @@ function List({ tasks, deleteTask, setTasks }) {
               alt="delete"
               tooltip="Delete task"
               onClick={() => deleteTask(task.id)}
-              // className="m-auto"
               className=""
             />
           </div>

@@ -4,7 +4,6 @@ function Button({
   onClick,
   text,
   tooltip,
-  disabled,
   tooltipPosition = "top",
   className = "",
 }) {
@@ -44,19 +43,6 @@ function Button({
             z-10
           `}
         >
-          {/* <div
-          className={`
-      absolute ${positions[tooltipPosition]}
-      whitespace-nowrap
-      rounded bg-neutral-900 px-2 py-1 text-xs text-white
-      opacity-0
-      md:group-hover:opacity-100
-      transition-opacity duration-200
-      pointer-events-none
-      z-10
-      hidden md:block
-    `}
-        > */}
           {tooltip}
           <div
             className={`
